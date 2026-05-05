@@ -399,6 +399,7 @@ void register_device_id(uint16_t source, uint16_t vendor,
 
 	const uint16_t ap_vendor = 0x004c;
 	const uint16_t vendorsrc = 0x0001;
+	const uint16_t apversion = 0x1a10;
 	const uint32_t attr_a000 = 0x00a026c4;
 	const uint64_t attr_a001 = 0x00000000007d0c0d;
 	const uint16_t attr_afff = 0x0001;
