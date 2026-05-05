@@ -397,6 +397,7 @@ void register_device_id(uint16_t source, uint16_t vendor,
 	const uint16_t spec = 0x0103;
 	const uint8_t primary = 1;
 	const uint32_t attr_a000 = 0x00a026c4;
+	const uint64_t attr_a001 = 0x00000000007d0c0d;
 	const uint16_t attr_afff = 0x0001;
 	sdp_list_t *class_list, *group_list, *profile_list;
 	uuid_t class_uuid, group_uuid;
@@ -449,6 +450,8 @@ void register_device_id(uint16_t source, uint16_t vendor,
 	sdp_attr_add(record, 0x0205, source_data);
 
 	sdp_attr_add_new(record, 0xa000, SDP_UINT32, &attr_a000);
+
+	sdp_attr_add_new(record, 0xa001, SDP_UINT64, &attr_a001);
 
 	sdp_attr_add_new(record, 0xafff, SDP_UINT16, &attr_afff);
 
