@@ -396,9 +396,12 @@ void register_device_id(uint16_t source, uint16_t vendor,
 {
 	const uint16_t spec = 0x0103;
 	const uint8_t primary = 1;
+
+	const uint16_t ap_vendor = 0x004c;
 	const uint32_t attr_a000 = 0x00a026c4;
 	const uint64_t attr_a001 = 0x00000000007d0c0d;
 	const uint16_t attr_afff = 0x0001;
+
 	sdp_list_t *class_list, *group_list, *profile_list;
 	uuid_t class_uuid, group_uuid;
 	sdp_data_t *sdp_data, *primary_data, *source_data;
@@ -434,7 +437,7 @@ void register_device_id(uint16_t source, uint16_t vendor,
 	spec_data = sdp_data_alloc(SDP_UINT16, &spec);
 	sdp_attr_add(record, 0x0200, spec_data);
 
-	vendor_data = sdp_data_alloc(SDP_UINT16, &vendor);
+	vendor_data = sdp_data_alloc(SDP_UINT16, &ap_vendor);
 	sdp_attr_add(record, 0x0201, vendor_data);
 
 	product_data = sdp_data_alloc(SDP_UINT16, &product);
